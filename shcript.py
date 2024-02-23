@@ -2,6 +2,7 @@
 import argparse
 import subprocess
 from pathlib import Path
+from sys import exit
 
 TEXT_EDITORS = ['nano', 'vim', 'emacs', 'vi']
 text_editor: str
@@ -12,6 +13,8 @@ def Main():
 		filepath.write_text("#!/usr/bin/%s" % (args.shebang))
 	else:
 		filepath.touch()
+
+	subprocess.check_call(['chmod', '+x', filepath])
 
 	if args.no_editor:
 		print("Script %s created at: %s" % (args.filename, filepath))
