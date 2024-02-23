@@ -46,7 +46,7 @@ def SetFilePath() -> Path:
 	user_bin = Path("%s/bin" % (Path.home()))
 	if user_bin.is_dir():
 		return Path("%s/bin/%s" % (Path.home(), args.filename))
-	return Path.cwd()
+	return Path("%s/%s" % (str(Path.cwd()), filename))
 
 if __name__ == '__main__':
 	parser = argparse.ArgumentParser(prog='shcript')
