@@ -2,6 +2,29 @@
 ### A shell command that makes shell commands!
 ###### (finally, no more "touch file; chmod +x file; $EDITOR file"!)
 
+## Now a binary!
+shcript is now a binary, programmed in python! I'll still include the original shell script but I highly reccomend using the binary instead as it's much more optimized.
+
+### shcript
+```
+usage: shcript [-h] [-z] [-b] [-s] [--no-editor] [--editor EDITOR] [--shebang SHEBANG] [-o OUTPUT] filename
+
+positional arguments:
+  filename           the name of the new script
+
+options:
+  -h, --help         show this help message and exit
+  -z, --zsh          shortcut flag for adding a zsh shebang
+  -b, --bash         shortcut flag for adding a bash shebang
+  -s, --bourne       shortcut flag for adding a bourne shell shebang (godspeed, soldier)
+  --no-editor        create the script without opening it in a text editor
+  --editor EDITOR    specify the text editor to open the newly created script in. The default editors are, in order of importance: Nano->Vim->Emacs->Vi
+  --shebang SHEBANG  Adds a custom shebang at the top of the script. Only the interpreter name is needed, not the full path (i.e: "zsh" instead of "/usr/bin/zsh"). If the shebang ends with "env
+                     <interpreter>", make sure to use quotation marks (i.e: --shebang "env python")
+  -o OUTPUT          the output path of the new script (default: "$HOME/bin" if it exists, otherwise "./")
+```
+
+### shcript.sh
 ```
 Usage: shcript [OPTIONS] [SHEBANG] {filename|filepath}
 Creates a new executable shell script and opens it in a text editor.
