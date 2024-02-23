@@ -40,9 +40,8 @@ def CheckCommand(command) -> bool:
 
 def SetFilePath() -> Path:
 	if args.output != None:
-		check_user_output = Path(args.output)
-		if check_user_output.is_dir():
-			return check_user_output
+		if Path(args.output).is_dir():
+			return Path("%s/%s" % (args.output, args.filename))
 		print('[WARNING]: Output path invalid; using default output path ($HOME/bin or the current working directory if $HOME/bin does not exist)')
 	user_bin = Path("%s/bin" % (Path.home()))
 	if user_bin.is_dir():
@@ -57,7 +56,7 @@ if __name__ == '__main__':
 	parser.add_argument('--no-editor', action='store_true', dest='no_editor', help='create the script without opening it in a text editor')
 	parser.add_argument('--editor', type=str, help='specify the text editor to open the newly created script in. The default editors are, in order of importance: Nano->Vim->Emacs->Vi')
 	parser.add_argument('--shebang', type=str, dest='shebang', help='Adds a custom shebang at the top of the script. Only the interpreter name is needed, not the full path (i.e: "zsh" instead of "/usr/bin/zsh"). If the shebang ends with "env <interpreter>", make sure to use quotation marks (i.e: --shebang "env python")')
-	parser.add_argument('-o', type=str, dest='output', help='the output path of the new script (default: "$HOME/bin" if it exists, otherwise "./")')
+	parser.add_argument('--output', help='the output path of the new script (default: "$HOME/bin" if it exists, otherwise "./")')
 	parser.add_argument('filename', type=str, help='the name of the new script')
 	args = parser.parse_args()
 
