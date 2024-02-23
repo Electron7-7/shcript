@@ -1,5 +1,6 @@
 # shcript
 ### A shell command that makes shell commands!
+
 ###### (finally, no more "touch file; chmod +x file; $EDITOR file"!)
 
 ## Now a binary!
@@ -25,6 +26,9 @@ options:
 ```
 
 ### shcript.sh
+=======
+###### (P.S: I recommend removing the ".sh" extension from the script if you want to add it to your executables folder since it'll be a lot easier to type. I only added the extension so that GitHub would correctly categorize the project language as being "shell", lol).
+
 ```
 Usage: shcript [OPTIONS] [SHEBANG] {filename|filepath}
 Creates a new executable shell script and opens it in a text editor.
