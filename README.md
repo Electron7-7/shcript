@@ -22,7 +22,7 @@ options:
   --editor EDITOR    specify the text editor to open the newly created script in. The default editors are, in order of importance: Nano->Vim->Emacs->Vi
   --shebang SHEBANG  Adds a custom shebang at the top of the script. Only the interpreter name is needed, not the full path (i.e: "zsh" instead of "/usr/bin/zsh"). If the shebang ends with "env
                      <interpreter>", make sure to use quotation marks (i.e: --shebang "env python")
-  -o OUTPUT          the output path of the new script (default: "$HOME/bin" if it exists, otherwise "./")
+  --output OUTPUT          the output path of the new script (default: "$HOME/bin" if it exists, otherwise "./")
 ```
 ---
 ### shcript.sh
