@@ -26,7 +26,6 @@ options:
 ```
 
 ### shcript.sh
-=======
 ###### (P.S: I recommend removing the ".sh" extension from the script if you want to add it to your executables folder since it'll be a lot easier to type. I only added the extension so that GitHub would correctly categorize the project language as being "shell", lol).
 
 ```
