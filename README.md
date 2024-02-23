@@ -24,7 +24,7 @@ options:
                      <interpreter>", make sure to use quotation marks (i.e: --shebang "env python")
   -o OUTPUT          the output path of the new script (default: "$HOME/bin" if it exists, otherwise "./")
 ```
-
+---
 ### shcript.sh
 ###### (P.S: I recommend removing the ".sh" extension from the script if you want to add it to your executables folder since it'll be a lot easier to type. I only added the extension so that GitHub would correctly categorize the project language as being "shell", lol).
 
